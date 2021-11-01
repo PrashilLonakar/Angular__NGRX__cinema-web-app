@@ -17,3 +17,25 @@ export const addMoviesSuccess = createAction(
   (movie: Movie) => ({movie})
   //props<{ movie: Movie }>()
 );
+
+export const editMovies = createAction(
+  '[Movie] Edit movie', 
+  (movie: Movie) => ({movie})
+  // props<{ movie: Movie }>()
+);
+export const editMoviesSuccess = createAction(
+  '[Movie] Edit movie success',
+  (movie: Movie) => ({movie})
+  //props<{ movie: Movie }>()
+);
+
+export const deleteMovies = createAction(
+  '[Movie] delete movie', 
+  (movie: Movie) => movie.id
+  // props<{ movie: Movie }>()
+);
+export const deleteMoviesSuccess = createAction(
+  '[Movie] Delete movie success',
+  (movie: Movie) => movie.id
+  //props<{ movie: Movie }>()
+);

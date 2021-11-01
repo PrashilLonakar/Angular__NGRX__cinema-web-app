@@ -17,6 +17,6 @@ export const movieUserSelector = createSelector(
   
   export const greater = (amount: number) =>
     createSelector(movieSelector, (movies) => {
-      return movies.filter((movie: Movie) => movie.earning >= amount);
+      return movies.filter((movie: Movie) => movie?.earning >= amount);
   });
   

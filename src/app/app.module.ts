@@ -22,6 +22,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { MovieEffects } from './Store/Effects/movie.effect';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { MovieEffects } from './Store/Effects/movie.effect';
     EffectsModule.forRoot([MovieEffects]),
     StoreModule.forRoot({ movies: movieReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    AppRoutingModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

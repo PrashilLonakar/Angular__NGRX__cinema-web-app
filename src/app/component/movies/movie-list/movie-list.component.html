@@ -1,10 +1,19 @@
-<div class="movies">
-    <section *ngFor="let movie of movies$ | async">
-        <mat-card>
-            <h1> {{movie.name}} </h1>
-            <h2> {{ movie.releaseDate | date }} </h2>
-            <h3> ${{ movie.earning }} million </h3>
-        </mat-card>
-    </section>
+
+<div style="padding: 20px;">
+<h4 style="float: left;">Movie Listing</h4>
+<button  style="float: right;" [routerLink]="['/movie/add']" mat-raised-button color="primary">Add Movie</button>
 </div>
 
+<div style="padding: 20px;">
+    <div class="movies">
+        <section *ngFor="let movie of movies$ | async">
+            <mat-card>
+                <h1> {{movie.name}} </h1>
+                <a mat-raised-button color="accent" style="position: absolute;right: 5px;top: 5px;" (click)="onEdit(movie)" >Edit</a>
+                <a mat-raised-button color="warn" style="position: absolute;right: 5px;bottom: 5px;" (click)="onDelete(movie.id)" >Delete</a>
+                <h2> {{ movie.releaseDate | date }} </h2>
+                <h3> ${{ movie.earning }} million </h3>
+            </mat-card>
+        </section>
+    </div>
+</div>

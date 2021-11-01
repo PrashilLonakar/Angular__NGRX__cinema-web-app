@@ -28,4 +28,23 @@ export class DataService {
       })
     );
   }
+
+
+  editMovies(movie: Movie): Observable<Movie> {
+    return this.http.put<Movie>(this.url + '/' + movie.id, movie).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  deleteMovies(id: any): Observable<Movie> {
+    return this.http.delete<Movie>(this.url + '/' + id).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
 }
