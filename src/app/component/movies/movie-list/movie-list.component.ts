@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DataService } from '../Service/data.service'; 
+import { DataService } from '../../../Service/data.service'; 
 import { Store,select } from '@ngrx/store';
-import { Movie } from '../Models/movie';
-import { MovieState } from '../Store/Reducers/movie.reducer';
+import { Movie } from '../../../Models/movie';
+import { MovieState } from '../../../Store/Reducers/movie.reducer';
 import {
   greater,
   movieSelector,
   movieUserSelector,
-} from '../Store/selectors/movie.selector';
+} from '../../../Store/selectors/movie.selector';
 
 @Component({
   selector: 'app-movie-list',

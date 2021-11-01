@@ -6,7 +6,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { MovieListComponent } from './movie-list/movie-list.component';
+import { MovieListComponent } from './component/movies/movie-list/movie-list.component';
+import { MovieAddEditComponent } from './component/movies/movie-add-edit/movie-add-edit.component';
 
 import { DataService } from './Service/data.service';
 import { InMemoryService } from './Service/in-memory.service';
@@ -25,7 +26,8 @@ import { MovieEffects } from './Store/Effects/movie.effect';
 @NgModule({
   declarations: [
     AppComponent,
-    MovieListComponent
+    MovieListComponent,
+    MovieAddEditComponent
   ],
   imports: [
     BrowserModule,
